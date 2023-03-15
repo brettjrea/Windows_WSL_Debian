@@ -1,0 +1,25 @@
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  repository_dispatch:
+    types: [file-changed]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Copy windows-install-wsl.ps1
+        run: |
+          mkdir -p powershell
+          curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/powershell/windows-install-wsl.ps1 --output powershell/windows-install-wsl.ps1
+          cp powershell/windows-install-wsl.ps1 .
+
+      - name: Auto commit
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: 'Auto commit copied windows-install-wsl.ps1'
