@@ -18,7 +18,7 @@ jobs:
       - name: Combine files
         run: |
           toc=$(curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/readme/table-of-contents.md)
-          config=$(curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/readme/windows-install-WSL.md)
+          config=$(curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/readme/windows-install-wsl.md)
           readme="$(echo -e "${toc}\n---\n${config}")"
           echo "${readme}" > README.md
 
