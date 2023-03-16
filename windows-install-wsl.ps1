@@ -19,5 +19,5 @@ Write-Host "Debian is downloaded."
 Add-AppxPackage .\debian.appx
 Write-Host "Debian package is added."
 
-# Step 5: Start Debian
+# Step 5: Start Debian.
 debian
