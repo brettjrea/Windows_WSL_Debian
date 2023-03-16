@@ -1,3 +1,5 @@
+name: Generate Powershell Script
+
 on:
   workflow_dispatch:
   push:
