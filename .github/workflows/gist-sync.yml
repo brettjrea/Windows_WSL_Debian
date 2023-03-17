@@ -17,5 +17,5 @@ jobs:
           auth: ${{ secrets.GIST_TOKEN }}
           gist_url: https://gist.githubusercontent.com/brettjrea/ca42f4ef0a42cbd40d3ebe5d7d7df4dd
           gist_title: Windows_WSL_Debian
-          gist_description: Example Gist Description
+          gist_description: Windows_WSL_Debian
           github_file: windows-install-wsl.ps1
