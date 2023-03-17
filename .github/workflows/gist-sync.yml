@@ -1,0 +1,16 @@
+name: Sync with Gist
+on:
+  push:
+    paths:
+      - windows-install-wsl.ps1
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update Gist
+        uses: gavinr/github-gist-sync@v1.0.2
+        with:
+          gist_id: dc8a1db356fc002ab6ce3fcce9eda05a
+          file: windows-install-wsl.ps1
+          token: ${{ secrets.GITHUB_TOKEN }}
