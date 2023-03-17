@@ -1,5 +1,6 @@
 name: Sync with Gist
 on:
+  workflow_dispatch:
   push:
     paths:
       - windows-install-wsl.ps1
