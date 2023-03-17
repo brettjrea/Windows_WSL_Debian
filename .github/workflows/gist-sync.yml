@@ -1,17 +1,21 @@
 name: Sync with Gist
+
 on:
-  workflow_dispatch:
-  push:
-    paths:
-      - windows-install-wsl.ps1
+ workflow_dispatch:
+ push:
+ 
 jobs:
-  sync:
+  gist-sync:
+    name: gist-sync
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Update Gist
-        uses: gavinr/github-gist-sync@v1.0.2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: popsiclestick/gist-sync-action@v1.2.0
+        id: sync
         with:
-          gist_id: dc8a1db356fc002ab6ce3fcce9eda05a
-          file: windows-install-wsl.ps1
-          token: ${{ secrets.GITHUB_TOKEN }}
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.githubusercontent.com/brettjrea/ca42f4ef0a42cbd40d3ebe5d7d7df4dd
+          gist_title: Windows_WSL_Debian
+          gist_description: Example Gist Description
+          github_file: windows-install-wsl.ps1
