@@ -15,7 +15,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Copy windows-install-wsl.ps1
+      - name: Copy windows-install-debian-wsl.ps1
         run: |
           curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/powershell/windows-install-debian-wsl.ps1 --output windows-install-debian-wsl.ps1
       
@@ -29,4 +29,4 @@ jobs:
       - name: Auto commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: 'Auto commit copied windows-install-wsl.ps1'
+          commit_message: 'Auto commit copied windows-install-debian-wsl.ps1'
