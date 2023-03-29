@@ -17,12 +17,12 @@ jobs:
 
       - name: Copy windows-install-wsl.ps1
         run: |
-          curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/powershell/windows-install-wsl.ps1 --output windows-install-wsl.ps1
+          curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/powershell/windows-install-debian-wsl.ps1 --output windows-install-debian-wsl.ps1
       
       - name: Combine files
         run: |
           toc=$(curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/readme/generate-readme-table-of-contents.md)
-          config=$(curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/readme/windows-install-wsl.md)
+          config=$(curl -sS https://raw.githubusercontent.com/brettjrea/GitHub_Generate_Readme/main/readme/windows-install-debian-wsl.md)
           readme="$(echo -e "${toc}\n---\n${config}")"
           echo "${readme}" > readme.md
           
